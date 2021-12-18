@@ -9,40 +9,46 @@ const Header = () => {
         setLoginStatus(sessionStorage.getItem('isUserLoggedIn'));
     }, []);
 
-    // if (loginStatus) {
-    //     return (
-    //         <header class="header sticky-top">
-    //             <nav class="navbar navbar-fixed-top navbar-expand-lg navbar-dark bg-dark">
-    //                 <div class="container">
-    //                     <Link className="navbar-brand" to="/">
-    //                         <img src="https://www.capgemini.com/wp-content/themes/capgemini-komposite/assets/images/logo.svg"
-    //                             height="24px" alt="Capgemini" />
-    //                     </Link>
-    //                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-    //                         <span class="navbar-toggler-icon"></span>
-    //                     </button>
-    //                     <div class="collapse navbar-collapse" id="navbarResponsive">
-    //                         <ul class="navbar-nav ml-auto">
-    //                             <li className="nav-item">
-    //                                 <Link className="nav-link" to="/hello" >Hello</Link>
-    //                             </li>
-    //                             <li className="nav-item">
-    //                                 <Link className="nav-link" to="/emp" >Emp</Link>
-    //                             </li>
-    //                             <li className="nav-item">
-    //                                 <Link className="nav-link" to="/spring" >Spring</Link>
-    //                             </li>
-    //                             <li className="nav-item">
-    //                                 <Link className="nav-link" to="/logout" >Logout</Link>
-    //                             </li>
-    //                         </ul>
-    //                     </div>
-    //                 </div>
-    //             </nav>
-    //         </header>
-    //     );
-    // }
-    // else {
+    if (loginStatus) {
+        return (
+            <header class="header sticky-top">
+                <nav class="navbar navbar-fixed-top navbar-expand-lg navbar-dark bg-dark">
+                    <div class="container">
+                        <Link className="navbar-brand" to="/">
+                            <img src="https://pensionersportal.gov.in/img/digital_india.png"
+                                height="24px" alt="Capgemini" />
+                        </Link>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarResponsive">
+                            <ul class="navbar-nav ml-auto">
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/bank" >
+                                        <i className="fas fa-piggy-bank">
+                                            <span style={{ marginLeft: "10px" }}>BankDetails</span>
+                                        </i>
+
+                                    </Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/pensioner" >Pensioner</Link>
+                                </li>
+                                {/* <li className="nav-item">
+                                    <Link className="nav-link" to="/spring" >Spring</Link>
+                                </li> */}
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/logout" >
+                                    <i class="fas fa-sign-out-alt">Logout</i></Link>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+        );
+    }
+    else {
         return (
             <header class="header sticky-top">
                 <nav class="navbar navbar-fixed-top navbar-expand-lg navbar-dark bg-dark">
@@ -58,10 +64,17 @@ const Header = () => {
                             <ul class="navbar-nav ml-auto">
 
                                 <li className="nav-item">
-                                    <Link className="nav-link" to="/register" >Register</Link>
+                                    <Link className="nav-link" to="/register" >
+                                    <i class="far fa-registered">
+                                    <span style={{ marginLeft: "10px" }}>
+                                        Register</span></i>
+                                    </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link" to="/login" >Login</Link>
+                                    <Link className="nav-link" to="/login" >
+                                    <i class="fas fa-sign-in-alt">
+                                    <span style={{ marginLeft: "10px" }}>Login</span></i>
+                                    </Link>
                                 </li>
                             </ul>
                         </div>
@@ -69,7 +82,7 @@ const Header = () => {
                 </nav>
             </header>
         );
-    // }
+    }
 
 }
 

@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
 export const Box = styled.div`
-padding: 40px 20px;
-background: black;
+padding: 40px 20px  ;
+background:orange;
 position: bottom;
 bottom: 0;
 width: 100%;
 
 
 @media (max-width: 1000px) {
-	padding: 40px 10px;
+	padding: 40px 20px;
 }
 `;
 
@@ -19,7 +19,7 @@ export const Container = styled.div`
 	justify-content: center;
 	max-width: 1000px;
 	margin: 0 auto;
-	/* background: red; */
+    
 `
 
 export const Column = styled.div`
@@ -32,7 +32,7 @@ margin-left: 60px;
 export const Row = styled.div`
 display: grid;
 grid-template-columns: repeat(auto-fill,
-						minmax(185px, 1fr));
+                     	minmax(185px, 1fr));
 grid-gap: 20px;
 
 @media (max-width: 1000px) {
@@ -42,7 +42,7 @@ grid-gap: 20px;
 `;
 
 export const FooterLink = styled.a`
-color: #fff;
+color: black;
 margin-bottom: 10px;
 font-size: 14px;
 text-decoration: none;
@@ -55,7 +55,7 @@ text-decoration: none;
 
 export const Heading = styled.p`
 font-size: 18px;
-color: #fff;
-margin-bottom: 10px;
+color: black;
+margin-bottom: 20px;
 font-weight: bold;
 `;

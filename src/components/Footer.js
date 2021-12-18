@@ -7,6 +7,7 @@ Row,
 Column,
 FooterLink,
 Heading,
+Statement,
 } from "./FooterStyle";
 
 const Footer = () => {

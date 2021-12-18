@@ -36,13 +36,18 @@ const AbstractLogin = () => {
         event.preventDefault();
     }
     return (
+        <div
+        style={{
+            backgroundImage: `url("https://png.pngtree.com/png-clipart/20200224/original/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_5247852.jpg")`,
+            
+        }}>
         
-        <div className="container">
             <div className="col-4 mt-3" >
                 <h1 className="display-4 text-primary">Login</h1>
                 <form className="form form-group form-dark " onSubmit={submitAbstractUser}>
                     <div>
                         <input
+                            
                             type="text"
                             className="form-control"
                             name="userName"
@@ -53,6 +58,7 @@ const AbstractLogin = () => {
                             onChange={handleAbstractUser}
                             autoFocus
                             required
+                           
                         />
                         <input
                             type="password"
@@ -79,6 +85,7 @@ const AbstractLogin = () => {
                 <Link to="/register" className="btn btn-primary col-12">Not yet registered? Register</Link>
             </div>
         </div >
+      
     )
 }
 export default AbstractLogin;

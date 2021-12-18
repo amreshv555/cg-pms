@@ -7,6 +7,9 @@ import Header from './components/Header';
 import Page404 from './components/Page404';
 import Home from './components/Home';
 import Footer from './components/Footer';
+import BankData from './components/BankData';
+import SpringPensionerDetails from './components/SpringPensionerDetails';
+
 
 
 const Routes = () => {
@@ -17,12 +20,37 @@ const Routes = () => {
         setLoginStatus(sessionStorage.getItem('isUserLoggedIn'));
     }, []);
 
-    return (
-        <div>
-            <Router>
-                <div>
-                    <Header />
-                  
+    if (loginStatus) {
+        return (
+            <div>
+                <Router>
+                    <div>
+                        <Header />
+                        <div>
+                            <Switch>
+                                <Route exact path="/" loginStatus > <Home /> </Route>
+                                <Route path="/home" loginStatus> <Home /> </Route>
+                                <Route path="/bank"> <BankData /> </Route>
+                                <Route path="/pensioner"> <SpringPensionerDetails /> </Route>
+                                {/* <Route path="/spring"> <SpringBootData /> </Route> */}
+                                <Route path="/logout"> <AbstractLogout /> </Route>
+                                <Route path="/*"> <Page404 /> </Route>
+                            </Switch>
+                            
+                        </div>
+                        <Footer />
+                    </div>
+                </Router>
+            </div>
+        );
+    }
+    else {
+        return (
+            <div>
+                <Router>
+                    <div>
+                        <Header />
+                      
                         <Switch>
                             <Route exact path="/" loginStatus > <Home /> </Route>
                             <Route path="/home" loginStatus> <Home /> </Route>
@@ -30,11 +58,12 @@ const Routes = () => {
                             <Route path="/login"> <AbstractLogin /> </Route>
                             <Route path="/*"> <Page404 /> </Route>
                         </Switch>
-            
-                    <Footer />
-                </div>
-            </Router>
-        </div>
-    );
+                       
+                        <Footer />
+                    </div>
+                </Router>
+            </div>
+        );
+    }
 }
 export default Routes;

@@ -26,6 +26,7 @@ const AbstractRegister = (props) => {
         axios.post(`http://localhost:8082/register`, abstractUser)
             .then((response) => {
                 console.log(response.data);
+                
                 localStorage.setItem('abstractUser', abstractUser);
                 alert('You are registered successfully. Please login now.');
                 history.push('/login'); // check this method to navigate 
@@ -44,6 +45,7 @@ const AbstractRegister = (props) => {
 
 
         <div className="container">
+            <div className="text-center">
             <div className="col-4 mt-3" >
                 <h1 className="display-4 text-primary">Register</h1>
                 <form className="form form-group form-dark " onSubmit={submitAbstractUser}>
@@ -60,6 +62,7 @@ const AbstractRegister = (props) => {
                             required
                         />
                         <input
+                        
                             type="password"
                             className="form-control"
                             name="password"
@@ -68,14 +71,6 @@ const AbstractRegister = (props) => {
                             placeholder="Enter password"
                             value={abstractUser.password}
                             onChange={handleAbstractUser} />
-                        {/* <div class="form-group">
-                            <select class="form-control mb-3" name="role" id="role" onChange={handleAppUser}>
-                                <option value="Role">Select a role</option>
-                                <option value="ADMIN">ADMIN</option>
-                                <option value="EMPLOYEE">EMPLOYEE</option>
-                                <option value="MANAGER">MANAGER</option>
-                            </select>
-                        </div> */}
                         <input
                             type="submit"
                             id="submit"
@@ -93,6 +88,7 @@ const AbstractRegister = (props) => {
                 {/* https://material.io/components/dialogs/web#alert-dialog */}
             </div>
         </div >
+        </div>
       </div>
     )
 }
