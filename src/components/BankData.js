@@ -151,7 +151,7 @@ import axios from 'axios';
                 <div className="col-12 border border-light shadow p-3 mb-5 bg-white">
                     {/* <p>Remove Bank Account</p> */}
                     <form className="form form-group form-primary" onSubmit={submitDeleteBankById}>
-                        <input className="form-control mt-4" type="number" id="accno" name="accno" value={accno} onChange={handleBank} placeholder="Enter accno to Delete" />
+                        <input className="form-control mt-4" min=4 type="number" id="accno" name="accno" value={accno} onChange={handleBank} placeholder="Enter accno to Delete" />
                         <input className="form-control mt-4 btn btn-danger" type="submit" value="Remove Bank" />
                     </form>
 

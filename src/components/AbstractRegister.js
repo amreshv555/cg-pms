@@ -62,8 +62,9 @@ const AbstractRegister = (props) => {
                             required
                         />
                         <input
-                        
+                           
                             type="password"
+                            pattern="^[a-zA-Z]+([\s][a-zA-Z]+)*$"
                             className="form-control"
                             name="password"
                             id="password"
